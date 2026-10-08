@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VoxTrace AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🎤 VoxTrace AI</h1>
+
+            <p>
+                Contrastive Speech Intelligence &
+                Temporal Flaw Grounding
+            </p>
+        </header>
+
+
+        <!-- RECORD SPEECH -->
+
+        <section class="card">
+
+            <h2>🎙️ Record Your Speech</h2>
+
+            <button id="startBtn">
+                Start Recording
+            </button>
+
+            <button id="stopBtn" disabled>
+                Stop Recording
+            </button>
+
+            <p id="recordingStatus">
+                Not recording
+            </p>
+
+            <audio id="recordedAudio" controls></audio>
+
+        </section>
+
+
+        <!-- UPLOAD AUDIO -->
+
+        <section class="card">
+
+            <h2>📁 Upload Speech</h2>
+
+            <input
+                type="file"
+                id="audioFile"
+                accept="audio/*"
+            >
+
+            <button id="analyzeBtn">
+                Analyze Speech
+            </button>
+
+            <p id="loading">
+                Processing audio...
+            </p>
+
+        </section>
+
+
+        <!-- SCORE -->
+
+        <section class="dashboard">
+
+            <div class="card score-card">
+
+                <h2>Overall Score</h2>
+
+                <div
+                    class="score"
+                    id="score"
+                >
+                    --
+                </div>
+
+                <p>/ 100</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Duration</h2>
+
+                <div
+                    class="metric"
+                    id="duration"
+                >
+                    --
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Speaking Rate</h2>
+
+                <div
+                    class="metric"
+                    id="wpm"
+                >
+                    --
+                </div>
+
+                <p>Words/min</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Average Pitch</h2>
+
+                <div
+                    class="metric"
+                    id="pitch"
+                >
+                    --
+                </div>
+
+                <p>Hz</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- AUDIO -->
+
+        <section class="card">
+
+            <h2>🔊 Speech</h2>
+
+            <audio
+                id="audioPlayer"
+                controls
+            ></audio>
+
+        </section>
+
+
+        <!-- FLAWS -->
+
+        <section class="card">
+
+            <h2>⚠️ Detected Flaws</h2>
+
+            <div id="flaws">
+
+                No analysis yet.
+
+            </div>
+
+        </section>
+
+
+        <!-- SUGGESTIONS -->
+
+        <section class="card">
+
+            <h2>💡 Suggestions</h2>
+
+            <div id="suggestions">
+
+                Analyze your speech to
+                receive suggestions.
+
+            </div>
+
+        </section>
+
+
+        <!-- ACOUSTIC FEATURES -->
+
+        <section class="card">
+
+            <h2>📊 Acoustic Analysis</h2>
+
+
+            <div class="feature">
+
+                <span>
+                    Pause Ratio
+                </span>
+
+                <span id="pauseRatio">
+                    --
+                </span>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>
+                    Vocal Energy
+                </span>
+
+                <span id="energy">
+                    --
+                </span>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>
+                    Pitch Variation
+                </span>
+
+                <span id="pitchVariation">
+                    --
+                </span>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
